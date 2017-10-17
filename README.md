@@ -15,3 +15,8 @@ La variable d'environnement *JAVA_HOME* doit être définie et pointer vers le r
 
 - Avec Maven si installé : *mvn clean tomcat8:run*
 - Avec le Wrapper Maven compris dans le projet : *./mvnw clean tomcat8:run* (Unix) ou *./mvnw.cmd clean tomcat8:run* (Windows)
+
+## Accès direct à la base de données 
+
+Il suffit de lancer lz script *h2.sh* ou *h2.bat* situé dans le répertoire*db*, lequel va engendrer l'ouverture d'une console H2 dans un navigateur.
+Il restera à adapter l'URL (JBDC) de connexion définissant l'emplacement de la base, puis de valider ppur accéder à l'explorateur H2 et jouer des requêtes SQL.

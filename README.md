@@ -1,15 +1,17 @@
-# servlet-rest-service
+# Cities REST Backend
 
-Proposition de correction / illustration du TP au long cours réalisé en session 3.
+Backend REST fourni pour la réalisation d'une application cliente JavaScript
 
-Chaque étape a sa propre branche, intégrant les étapes précédentes :
+## Configuration pour le lancement de Tomcat
 
-- [master](https://github.com/simplon-promo-pe-2/servlet-rest-service) (découverte / prise en main)
-- [crud](https://github.com/simplon-promo-pe-2/servlet-rest-service/tree/crud)
-- [session](https://github.com/simplon-promo-pe-2/servlet-rest-service/tree/session)
-- [json](https://github.com/simplon-promo-pe-2/servlet-rest-service/tree/json)
-- [tomcat](https://github.com/simplon-promo-pe-2/servlet-rest-service/tree/tomcat)
+- Avec le plugin Maven Apache Tomcat : mettre à jour la propriété système *referentiel.db.jdbc.url* dans la configuration du plugin tomcat8-maven-plugin (*pom.xml*) pour pointer sur l'emplacement dans lequel se trouve la base fichier (adapter surtout le répertoire parent de *db/data/referentiel*)
+- Dans Eclipse : dans la configuration d'exécution (Run as ...), onglet *Arguments*, ajouter *-Dreferentiel.db.jdbc.url=jdbc:h2:file:~/work/pe-promo2/cities-rest-backend/db/data/referentiel* en adaptant l'emplacement de la base fichier (adapter surtout le répertoire parent de *db/data/referentiel*)
 
-La base de données est configurée pour fonctionner en mode serveur grâce à l'exécution de l'outil *h2.sh* / *h2.bat* situé dans le dossier db (démarrage d'une base de données autonome). L'url d'accès à la base de données doit être revue pour coïncider avec l'environnement local, propriété *javax.persistence.jdbc.url* située dans le fichier *persistence.xml*
+## Prérequis au lancement en ligne de commande
 
-Possibilité de fonctionner en mode embarqué pour la base de données en configurant la propriété *javax.persistence.jdbc.url* située dans le fichier *persistence.xml* à une valeur de type *jdbc:h2:file:CheminAbsoluVersDossier/servlet-rest-service/db/data/referentiel*
+La variable d'environnement *JAVA_HOME* doit être définie et pointer vers le répertoire d'un JDK 7+ (ex. JAVA\_HOME=C:\Outils\JDK1.7.0)
+
+## Lancement en ligne de commande
+
+- Avec Maven si installé : *mvn clean tomcat8:run*
+- Avec le Wrapper Maven compris dans le projet : *./mvnw clean tomcat8:run* (Unix) ou *./mvnw.cmd clean tomcat8:run* (Windows)

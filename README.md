@@ -20,3 +20,11 @@ La variable d'environnement *JAVA_HOME* doit être définie et pointer vers le r
 
 Il suffit de lancer lz script *h2.sh* ou *h2.bat* situé dans le répertoire*db*, lequel va engendrer l'ouverture d'une console H2 dans un navigateur.
 Il restera à adapter l'URL (JBDC) de connexion définissant l'emplacement de la base, puis de valider ppur accéder à l'explorateur H2 et jouer des requêtes SQL.
+
+## Exemples d'URLs en GET
+
+- [Liste des 10 premières villes](http://localhost:8080/cities-rest-backend/rest/villes?from=0&limit=10)
+- [Détails d'une ville](http://localhost:8080/cities-rest-backend/rest/villes/21578)
+- [Liste des 10 premiers monuments](http://localhost:8080/cities-rest-backend/rest/monuments?from=0&limit=10)
+- [Liste des monuments d'une ville](http://localhost:8080/cities-rest-backend/rest/villes/21578/monuments)
+- [Détails d'un monument](http://localhost:8080/cities-rest-backend/rest/monuments/1)
